@@ -1,0 +1,47 @@
+<% @page_title = "Trips" %>
+
+<%= link_to("<< Back to List", {:controller => 'cdls', :action => 'list'}, :class => 'back-link') %>
+
+<div class="subject show">
+  <h2><%= @trip.cdl_name %></h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Empty 1</th>
+      <td><%= status_tag(@trip.empty_1) %></td>
+    </tr>
+    <tr>
+      <th>Empty 2</th>
+      <td><%= status_tag(@trip.empty_2) %></td>
+    </tr>
+    <tr>
+      <th>Empty 3</th>
+      <td><%= status_tag(@trip.empty_3) %></td>
+    </tr>
+    <tr>
+      <th>Empty 4</th>
+      <td><%= status_tag(@trip.empty_4) %></td>
+    </tr>
+    <tr>
+      <th>Full 1</th>
+      <td><%= status_tag(@trip.full_1) %></td>
+    </tr>
+    <tr>
+      <th>Full 2</th>
+      <td><%= status_tag(@trip.full_2) %></td>
+    </tr>
+    <tr>
+      <th>Full 3</th>
+      <td><%= status_tag(@trip.full_3) %></td>
+    </tr>
+    <tr>
+      <th>Full 4</th>
+      <td><%= status_tag(@trip.full_4) %></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><%= button_to("Edit", {:action => 'edit', :id => @trip.id}, :class => 'action edit') %></td>
+    </tr>
+  </table>
+</div>
+Total: <%= @trip.total %>

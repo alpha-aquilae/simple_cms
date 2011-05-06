@@ -1,0 +1,42 @@
+<% @page_title = "Prospect List" %>
+
+<div class="subject list">
+  <h2>CDL Trips</h2>
+  
+  <%= link_to("Add New Record", {:action => 'new'}, :class => 'action new') %>
+
+  
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Cdl id</th>
+      <th>Name</th>
+      <th>Empty 1</th>
+      <th>Empty 2</th>
+      <th>Empty 3</th>
+      <th>Empty 4</th>
+      <th>Full 1</th>
+      <th>Full 2</th>
+      <th>Full 3</th>
+      <th>Full 4</th>
+    </tr>
+    <% @trips.each do |trip| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= trip.cdl_id %></td>
+      <td><%= trip.cdl_name %></td>
+      <td class="center"><%= status_tag(trip.empty_1) %></td>
+      <td class="center"><%= status_tag(trip.empty_2) %></td>
+      <td class="center"><%= status_tag(trip.empty_3) %></td>
+      <td class="center"><%= status_tag(trip.empty_4) %></td>
+      <td class="center"><%= status_tag(trip.full_1) %></td>
+      <td class="center"><%= status_tag(trip.full_2) %></td>
+      <td class="center"><%= status_tag(trip.full_3) %></td>
+      <td class="center"><%= status_tag(trip.full_4) %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => trip.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => trip.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'destroy', :id => trip.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

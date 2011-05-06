@@ -1,0 +1,29 @@
+<h2><%= @cdl.name %></h2>
+
+	<div class="section">
+		<table class="listing" summary="Subject list">
+    <tr> 
+      <td>General Knowledge</th>
+      <td class="center"><%= status_tag(@cdl.general_knowledge) %></td>
+    </tr>  
+    <tr> 
+      <td>Air Brakes</th>
+    <td class="center"><%= status_tag(@cdl.air_brakes) %></td>
+    <tr> 
+      <td>Passenger</th>   
+      <td class="center"><%= status_tag(@cdl.passenger) %></td>
+    </tr>  
+    <tr> 
+      <td>School</th>
+	      <td class="center"><%= status_tag(@cdl.school) %></td>
+     </tr> 
+    <tr> 
+      <td>Physical</th>
+      <td class="center"><%= status_tag(@cdl.physical) %></td>
+    </tr>  
+    <tr> 
+      <td>Skills Test</th>
+	      <td class="center"><%= status_tag(@cdl.skills_test) %></td>
+    </tr> 
+  </table>
+  </div>

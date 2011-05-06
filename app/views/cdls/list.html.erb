@@ -1,0 +1,40 @@
+<% @page_title = "Prospect List" %>
+<%= link_to("<< Back to Menu", {:controller =>  'access', :action => 'menu'}, :class => 'back-link') %>
+
+<div class="subject list">
+  <h2>CDL Prospects</h2>
+  
+  <%= link_to("Add New Prospect", {:action => 'new'}, :class => 'action new') %>
+
+  
+  <table class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Name</th>
+      <th>General Knowledge</th>
+      <th>Air Brakes</th>
+      <th>Passenger</th>
+      <th>School</th>
+      <th>Physical</th>
+      <th>Skills Test</th>
+      <th>Trips</th>
+      <th>Actions</th>
+    </tr>
+    <% @cdls.each do |cdl| %>
+    <tr class="<%= cycle('odd', 'even') %>">
+      <td><%= cdl.name %></td>
+      <td class="center"><%= status_tag(cdl.general_knowledge) %></td>
+      <td class="center"><%= status_tag(cdl.air_brakes) %></td>
+      <td class="center"><%= status_tag(cdl.passenger) %></td>
+      <td class="center"><%= status_tag(cdl.school) %></td>
+      <td class="center"><%= status_tag(cdl.physical) %></td>
+      <td class="center"><%= status_tag(cdl.skills_test) %></td>
+      <td class="center"><%= link_to("#{cdl.trips.map {|t| t.total}[0]}/8", :controller => 'trips', :action => 'show', :cdl_id => cdl.id) %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show', :id => cdl.id}, :class => 'action show') %>
+        <%= link_to("Edit", {:action => 'edit', :id => cdl.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => cdl.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

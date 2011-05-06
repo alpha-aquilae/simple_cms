@@ -1,0 +1,17 @@
+<% @page_title = "Edit Prospect: #{@trip.cdl_name}" %>
+
+<%= link_to("<< Back to List", {:controller => 'cdls', :action => 'list'}, :class => 'back-link') %>
+
+<div class="subject edit">
+  <h2>Update <%= @trip.cdl_name %></h2>
+
+  <%= form_for(:trip, :url => {:action => 'update', :id => @trip.id}) do |f| %>
+  
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Update Prospect") %>
+    </div>
+    
+  <% end %>
+</div>

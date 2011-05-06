@@ -1,0 +1,35 @@
+<% @page_title = "Show Prospect: #{@cdl.name}" %>
+
+<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
+
+<div class="subject show">
+  <h2><%= @cdl.name %></h2>
+
+  <table summary="cdl detail view">
+    <tr>
+      <th>Physical</th>
+      <td><%= @cdl.physical ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>General Knowledge</th>
+      <td><%= @cdl.general_knowledge ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>Air Brakes</th>
+      <td><%= @cdl.air_brakes ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>Passenger</th>
+      <td><%= @cdl.passenger ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>School</th>
+      <td><%= @cdl.school ? 'Yes' : 'No' %></td>
+    </tr>
+    <tr>
+      <th>Skills Test</th>
+      <td><%= @cdl.skills_test ? 'Yes' : 'No' %></td>
+    </tr>
+  </table>
+  
+</div>

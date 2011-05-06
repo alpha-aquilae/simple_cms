@@ -1,0 +1,28 @@
+<% @page_title = "Admin User List" %>
+<%= link_to("<< Back to Menu", {:controller =>  'access', :action => 'menu'}, :class => 'back-link') %>
+
+<div class="page list">
+  <h2>Admin Users</h2>
+  
+  <%= link_to("Create Admin User", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing" summary="Page list">
+    <tr class="header">
+      <th>Username</th>
+      <th>Name</th>
+      <th>E-mail address</th>
+      <th>Actions</th>
+    </tr>
+    <% @admin_users.each do |au| %>
+    <tr>
+      <td><%= au.username %></td>
+      <td><%= au.name %> </td>
+      <td><%= au.email %></td>
+      <td class="actions">
+        <%= link_to("Edit", {:action => 'edit', :id => au.id}, :class => 'action edit') %>
+        <%= link_to("Delete", {:action => 'delete', :id => au.id}, :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

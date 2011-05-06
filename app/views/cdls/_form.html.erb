@@ -1,0 +1,35 @@
+<%= error_messages_for(@cdl) %>
+<table summary="Subject form fields">
+  <tr>
+    <th><%= f.label(:name) %></th>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:position) %></th>
+    <td><%= f.select(:position, 1..@cdl_count ) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:physical) %></th>
+    <td><%= f.check_box(:physical) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:general_knowledge) %></th>
+    <td><%= f.check_box(:general_knowledge) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:air_brakes) %></th>
+    <td><%= f.check_box(:air_brakes) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:passenger) %></th>
+    <td><%= f.check_box(:passenger) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:school) %></th>
+    <td><%= f.check_box(:school) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:skills_test) %></th>
+    <td><%= f.check_box(:skills_test) %></td>
+  </tr>
+</table>

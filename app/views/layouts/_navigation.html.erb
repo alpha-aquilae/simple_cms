@@ -1,0 +1,28 @@
+<%  subjects ||= [] %>
+<%  cdls ||= [] %>
+<ul>
+	<li><%= link_to("Admin", :controller => 'admin', :action => 'index') %></li>
+	<li><%= link_to("Home", :action => 'index') %></li>
+	<hr />
+<% subjects.each do |subject| %>
+	<li>
+		<%= subject.name %>
+		<ul>
+			<% subject.pages.visible.sorted.each do |page| %>
+			<li><%= link_to_unless_current(page.name, :action => 'show', :id => page.permalink) %></li>
+			<% end %>
+		</ul>
+	</li>
+<% end %>
+<hr />
+		<li>
+		<%= "CDL Prospects" %>
+		<li>
+		<ul>
+			<% cdls.each do |cdl| %>
+			<li><%= link_to_unless_current(cdl.name, :action => 'show_cdls', :id => cdl.id) %></li>
+			<% end %>
+		</ul>
+	</li>
+	</li>
+</ul>
