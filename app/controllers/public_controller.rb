@@ -10,12 +10,11 @@ class PublicController < ApplicationController
 
   def show
     	@page = Page.where('visible').first
-    	@cdl = Cdl.first
     	redirect_to(:action => 'index') unless @page || @cdl
     end
     
   def show_cdls
-    	@cdl = Cdl.first
+    	@cdl = Cdl.find_by_id(params[:id])
     	redirect_to(:action => 'index') unless @cdl
   end 
 
