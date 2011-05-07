@@ -10,7 +10,13 @@
   </head>
   <body>
     <div id="header">
-    	<h1><%= link_to("DillonHafer.com", {:controller => 'public', :action => 'index'}, :class => 'actiony') %></h1>
+    	<ul>
+	    	<li style="float:left;" class="logo"><%= link_to(image_tag("check.png"), {:controller => 'public', :action => 'index'}) %></li>
+	    	<tr>
+	    		<td><%= link_to("Home", :action => 'index') %></td>
+	    		<td><%= link_to("Admin", :controller => 'admin', :action => 'index') %></td>
+	    	</tr>
+    	</ul>
     </div>
     <div id="main">
       <div id="navigation">
@@ -21,7 +27,7 @@
       </div>
     </div>
     <div id="footer">
-      <p id="copyright" style="text-shadow: 2px 2px 2px black">&copy; dillonhafer.com / Dillon Hafer</p>
+      <p id="copyright" style="text-shadow: 2px 2px 2px black">&copy; DillonHafer.com / Dillon Hafer</p>
     </div>
   </body>
 </html>

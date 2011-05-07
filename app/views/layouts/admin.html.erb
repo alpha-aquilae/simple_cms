@@ -11,7 +11,12 @@
   </head>
   <body>
     <div id="header">
-    	<h1><%= link_to("(dillon)", {:controller => 'access', :action => 'index'}, :class => 'actiony') %></h1>
+    	<ul>
+	    	<li style="float:left;" class="logo"><%= link_to(image_tag("check.png"), {:controller => 'public', :action => 'index'}) %></li>
+	    	<tr>
+	    		<td><%= link_to("Home", :controller => 'public',:action => 'index') %></td>
+	    	</tr>
+    	</ul>
     </div>
     <div id="main">
       <% if !flash[:notice].blank? %>

@@ -1,29 +1,31 @@
-<h2><%= @cdl.name %></h2>
 
-	<div class="section">
+
+	<div class="section" style="padding-left: 20%;">
+		<h2><%= @cdl.name %></h2>
+		
 		<table class="listing" summary="Subject list">
     <tr> 
-      <td>General Knowledge</th>
-      <td class="center"><%= status_tag(@cdl.general_knowledge) %></td>
+      <td class="center"><%= @cdl.general_knowledge ? image_tag("check.png") : status_tag(@cdl.general_knowledge) %></td>
+      <td>General Knowledge</td>
     </tr>  
     <tr> 
-      <td>Air Brakes</th>
-    <td class="center"><%= status_tag(@cdl.air_brakes) %></td>
+    	<td class="center"><%= @cdl.air_brakes ? image_tag("check.png") : status_tag(@cdl.air_brakes) %></td>
+    	<td>Air Brakes</th>
     <tr> 
+    	<td class="center"><%= @cdl.passenger ? image_tag("check.png") : status_tag(@cdl.passenger) %></td>
       <td>Passenger</th>   
-      <td class="center"><%= status_tag(@cdl.passenger) %></td>
     </tr>  
     <tr> 
+    	<td class="center"><%= @cdl.school ? image_tag("check.png") : status_tag(@cdl.school) %></td>
       <td>School</th>
-	      <td class="center"><%= status_tag(@cdl.school) %></td>
      </tr> 
     <tr> 
+    	<td class="center"><%= @cdl.physical ? image_tag("check.png") : status_tag(@cdl.physical) %></td>
       <td>Physical</th>
-      <td class="center"><%= status_tag(@cdl.physical) %></td>
     </tr>  
     <tr> 
+    	<td class="center"><%= @cdl.skills_test ? image_tag("check.png") : status_tag(@cdl.skills_test) %></td>
       <td>Skills Test</th>
-	      <td class="center"><%= status_tag(@cdl.skills_test) %></td>
     </tr> 
   </table>
   </div>
