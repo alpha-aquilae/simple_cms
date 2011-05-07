@@ -12,9 +12,16 @@
   <body>
     <div id="header">
     	<ul>
-	    	<li style="float:left;" class="logo"><%= link_to(image_tag("check.png"), {:controller => 'public', :action => 'index'}) %></li>
+	    	<%= link_to("DillonHafer.com", {:controller => 'public', :action => 'index'}, :class => 'logo') %>
 	    	<tr>
-	    		<td><%= link_to("Home", :controller => 'public',:action => 'index') %></td>
+	    		<td>&nbsp;</td>
+	    		<td><%= link_to("Manage Content", :controller => 'subjects') %></td>
+	        <td>&nbsp;</td>
+	    		<td><%= link_to("Manage Admin Users", :controller => 'admin_users') %></td>
+	        <td>&nbsp;</td>
+	    		<td><%= link_to("Manage CDL Prospects", :controller => 'cdls') %></td>
+	        <td>&nbsp;</td>
+	    		<td><%= link_to("Logout", :action => 'logout') %></td>
 	    	</tr>
     	</ul>
     </div>
@@ -29,7 +36,7 @@
       </div>
     </div>
     <div id="footer">
-      <p id="copyright">&copy; dillonhafer.com / Dillon Hafer</p>
+      <p id="copyright">&copy; DillonHafer.com / Dillon Hafer</p>
     </div>
   </body>
 </html>

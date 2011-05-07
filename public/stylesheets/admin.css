@@ -26,8 +26,8 @@ a.actiony:hover {text-decoration: none}
 
 /* CRUD */
 .notice { margin-left: 20%; height: 1.25em; width: 30em; padding: 0.5em; text-align: center;
-  background: white; color: blue; border: 1px solid black; text-shadow: 1px 1px 2px black; box-shadow: 0 0 10px 2px #111;}
-.back-link { font-size: 0.8em; margin-bottom: 1em; }
+  background: white; color: green; border: 1px solid black; text-shadow: 1px 1px 2px black; box-shadow: 0 0 10px 2px #111;}
+.back-link { color:black; font-size: 0.8em; margin-bottom: 1em; }
 .form-buttons { text-align: center; margin: 1em 0; }
 
 .list table { clear: both; width: 100%; }
