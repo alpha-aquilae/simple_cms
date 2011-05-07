@@ -1,7 +1,7 @@
 class AdminUsersController < ApplicationController
 
 layout 'admin'
-   #before_filter :confirm_logged_in
+   before_filter :confirm_logged_in
   def index
     list
     render('list')
