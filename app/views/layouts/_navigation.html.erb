@@ -1,10 +1,23 @@
+<script>
+ $(document).ready(function(){
+    $("ul.subjects").hide();
+    $("li.contact").click(function() {$("ul.subjects").fadeToggle('slow');});
+    });
+</script>
+<script>
+ $(document).ready(function(){
+    $("ul.prospects").hide();
+    $("li.prospect").click(function() {$("ul.prospects").fadeToggle('slow');});
+    });
+</script>
+
+
 <%  subjects ||= [] %>
 <%  cdls ||= [] %>
 <ul>
 <% subjects.each do |subject| %>
-	<li>
-		<%= subject.name %>
-		<ul>
+	<li class="<%= subject.name.downcase %>"><%= subject.name %></li>
+		<ul class="subjects">
 			<% subject.pages.visible.sorted.each do |page| %>
 			<li><%= link_to_unless_current(page.name, :action => 'show', :id => page.permalink) %></li>
 			<% end %>
@@ -12,10 +25,8 @@
 	</li>
 <% end %>
 <hr />
-		<li>
-		<%= "CDL Prospects" %>
-		<li>
-		<ul>
+		<li class="prospect">CDL Prospects</li>
+		<ul class="prospects">
 			<% cdls.each do |cdl| %>
 			<li><%= link_to_unless_current(cdl.name, :action => 'show_cdls', :id => cdl.id) %></li>
 			<% end %>
