@@ -20,14 +20,15 @@
 	    	</tr>
     	</ul>
     </div>
-    <div id="main">
       <div id="navigation">
       		<%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects, :cdls => @cdls })%>
       </div>
+    <div id="main">
       <div id="content">
         <%= yield %>
       </div>
     </div>
+      <br style="clear: both;" />
       <p style="text-shadow: 2px 2px 2px black; text-align:center;">&copy; DillonHafer.com / Dillon Hafer</p>
   </body>
 </html>

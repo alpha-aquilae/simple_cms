@@ -14,7 +14,7 @@
 
 <%  subjects ||= [] %>
 <%  cdls ||= [] %>
-<ul>
+<ul class="navigation">
 <% subjects.each do |subject| %>
 	<li class="<%= subject.name.downcase %>"><%= subject.name %></li>
 		<ul class="subjects">

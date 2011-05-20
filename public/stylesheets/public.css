@@ -99,12 +99,29 @@ background-image: -moz-linear-gradient(
 **               Main                         **
 ***********************************************/
 #main { 
-  padding: .5em;
-  margin-left: 4em;
+  padding-bottom: .5em;
+  padding-right: .5em;
+  padding-top: .5em;
+  padding-left:1em;
+  margin-left: 2em;
   margin-right: 4em;
   margin-bottom: 2em;
   margin-top: 2em;
-	min-height: 300px; 
+	min-height: auto;
+  width: 600px;
+  background-color: white;
+  border: 3px solid gray;
+  -moz-border-radius: 15px; -webkit-border-radius:15px; border-radius: 15px;
+  float: left;
+  
+}
+
+#navigation { 
+  float:left;
+  padding: .5em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+  margin-top: 2em;
   background-color: white;
   border: 3px solid gray;
   -moz-border-radius: 15px; -webkit-border-radius:15px; border-radius: 15px;
@@ -113,7 +130,7 @@ background-image: -moz-linear-gradient(
 /***********************************************
 **               Navigation                   **
 ***********************************************/
-#navigation { 
+.navigation { 
 	margin-top:10px;
 	margin-right:10px;
 	margin-bottom:100%;
@@ -123,7 +140,6 @@ background-image: -moz-linear-gradient(
 	padding: 10px; 
   background:white; 
   color: #4C2516;
-  border-right: 1px solid black;
 }
 #navigation ul { list-style: none; margin: 0; padding: 0; }
 #navigation hr { border: 0; border-bottom: 1px dotted black ; color: black; }
