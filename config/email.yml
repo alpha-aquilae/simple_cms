@@ -1,0 +1,12 @@
+development:
+  :address => "smtp.gmail.com"
+  :port => 587
+  :authentication => :login
+  :user_name => "dhafer@hylesanderson.edu"
+  :password => "aquilae7"
+production:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: :login
+  :user_name: dhafer@hylesanderson.edu
+  :password: canyouseethis

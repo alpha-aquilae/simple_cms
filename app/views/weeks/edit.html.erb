@@ -1,0 +1,16 @@
+<h1>Update Your Log.</h1>
+<%= link_to("<< Back to Index", {:action => "index" }) %>
+
+<div>
+  <h2>Update Log</h2>
+
+  <% form_for(:week, :url => {:action => "update", :week_id => @week.id }) do |f| %>
+  
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div>
+      <%= submit_tag("Update Log") %>
+    </div>
+    
+  <% end %>
+</div>

@@ -1,0 +1,62 @@
+<table>
+  <tr>
+    <td><%= f.label :name %></td>
+    <td><%= f.text_field :name %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :sunday_start %></td>
+    <td><%= f.datetime_select(:sunday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :sunday_end %></td>
+    <td><%= f.datetime_select(:sunday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :monday_start %></td>
+    <td><%= f.datetime_select(:monday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :monday_end %></td>
+    <td><%= f.datetime_select(:monday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :tuesday_start %></td>
+    <td><%= f.datetime_select(:tuesday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :tuesday_end %></td>
+    <td><%= f.datetime_select(:tuesday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :wednesday_start %></td>
+    <td><%= f.datetime_select(:wednesday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :wednesday_end %></td>
+    <td><%= f.datetime_select(:wednesday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :thursday_start %></td>
+    <td><%= f.datetime_select(:thursday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :thursday_end %></td>
+    <td><%= f.datetime_select(:thursday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :friday_start %></td>
+    <td><%= f.datetime_select(:friday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :friday_end %></td>
+    <td><%= f.datetime_select(:friday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :saturday_start %></td>
+    <td><%= f.datetime_select(:saturday_start, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :saturday_end %></td>
+    <td><%= f.datetime_select(:saturday_end, :order => [:month, :day, :year, :hour, :minute]) %></td>
+  </tr>
+</table>

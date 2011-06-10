@@ -1,0 +1,17 @@
+<h1>This is for a new week log.</h1>
+<br />
+<%= link_to("<< Back to Index", {:action => "index" }) %>
+
+<div>
+  <h2>Create Log</h2>
+
+  <% form_for(:week, :url => {:action => "create" } ) do |f| %>
+  
+    <%= render(:partial => "form", :locals => {:f => f}) %>
+    
+    <div>
+      <%= submit_tag("Create Log") %>
+    </div>
+    
+  <% end %>
+</div>

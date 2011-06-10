@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110406163848) do
+ActiveRecord::Schema.define(:version => 20110608022013) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",      :limit => 25
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(:version => 20110406163848) do
     t.datetime "updated_at"
   end
 
+  create_table "surveys", :force => true do |t|
+    t.integer  "question_one",   :default => 1
+    t.integer  "question_two",   :default => 1
+    t.integer  "question_three", :default => 1
+    t.integer  "question_four",  :default => 1
+    t.integer  "question_five",  :default => 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "trips", :force => true do |t|
     t.integer  "cdl_id"
     t.string   "cdl_name"
@@ -103,6 +113,26 @@ ActiveRecord::Schema.define(:version => 20110406163848) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "total"
+  end
+
+  create_table "weeks", :force => true do |t|
+    t.string   "name"
+    t.datetime "sunday_start"
+    t.datetime "sunday_end"
+    t.datetime "monday_start"
+    t.datetime "monday_end"
+    t.datetime "tuesday_start"
+    t.datetime "tuesday_end"
+    t.datetime "wednesday_start"
+    t.datetime "wednesday_end"
+    t.datetime "thursday_start"
+    t.datetime "thursday_end"
+    t.datetime "friday_start"
+    t.datetime "friday_end"
+    t.datetime "saturday_start"
+    t.datetime "saturday_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

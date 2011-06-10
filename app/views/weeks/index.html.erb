@@ -1,0 +1,146 @@
+<style>
+h1 a {
+  text-decoration:none;
+  color: white;
+  
+}
+
+h1 {
+  text-align:center;
+  text-shadow: 2px 2px 2px #333;
+}
+
+table {
+  border-collapse:collapse;
+  border: 2px solid gray;
+}
+
+.header th{
+  background: -moz-linear-gradient(center top , #FEFEFE, #ADD8E6) repeat scroll 0 0 #EEEEEE;
+}
+
+.header td {
+}
+
+td {
+  padding: 12px;
+  border: 1px solid gray;
+  font-weight:bold;
+}
+
+tr.header {
+  background-color: lightblue;
+  border-bottom: black;
+}
+
+th {
+  padding: 4px;
+  border: 1px solid gray;
+}
+
+li {
+  list-style-type: none;
+  display: inline;
+}
+
+
+li a {
+  color:black;
+  font-weight: bold;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background: white;
+  text-decoration:none;
+  background: -moz-linear-gradient(center top , #FEFEFE, #CDCDCD) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#CDCDCD));
+}
+
+li a:hover {
+  background: -moz-linear-gradient(center top , #FEFEFE, #ACACAC) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#ACACAC));
+}
+
+.totals th {
+  background: -moz-linear-gradient(center top , #FEFEFE, #CDCDCD) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#CDCDCD));
+}
+
+.times td {
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));background: -moz-linear-gradient(center top , #FEFEFE, #ADD8E6) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));
+}
+
+body {
+  background-color: #C0DEED;
+  font-family: sans-serif;
+  height: 1000px;
+  padding: 2em;
+  background-image: url("images/bg-clouds.png");
+  background-repeat: repeat-x;
+}
+
+div#logs {
+  position:relative;
+  margin: 14px;
+  width: 880px;
+  border-radius: 12px;
+  border: 2px solid #333;
+  padding: 1em;
+  background: -moz-linear-gradient(center top , #A2C2E5, #B7D8FF 100%) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0.98 bottom, from(#FEFEFE), to(#ACACAC));
+  font-family: sans-serif;
+  box-shadow: 2px 2px 2px #333;
+}
+</style>
+
+
+<h1 style="text-align:center; color:white; text-shadow: 2px 2px 2px #333;"><%= link_to "iTime", :action => "new" %></h1>
+<% @weeks.each do |w| %>
+<div id="logs">
+<h2 style="text-align:center; color:white; text-shadow: 1px 1px 2px #333;"><%= w.sunday_start.to_date.to_formatted_s(:long) %> - <%= w.saturday_start.to_date.to_formatted_s(:long) %></h2>
+<table>
+  <tr class="header">
+    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.sunday_start.strftime("%a") %></th>
+    <th><%= w.monday_start.strftime("%a") %></th>
+    <th><%= w.tuesday_start.strftime("%a") %></th>
+    <th><%= w.wednesday_start.strftime("%a") %></th>
+    <th><%= w.thursday_start.strftime("%a") %></th>
+    <th><%= w.friday_start.strftime("%a") %></th>
+    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.saturday_start.strftime("%a") %></th>
+  </tr>
+  
+  <tr class="times">
+    <td style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.sunday_start.strftime("%H:%M") %> - <%= w.sunday_end.strftime("%H:%M") %></td>
+    <td><%= w.monday_start.strftime("%H:%M") %> - <%= w.monday_end.strftime("%H:%M") %></td>
+    <td><%= w.tuesday_start.strftime("%H:%M") %> - <%= w.tuesday_end.strftime("%H:%M") %></td>
+    <td><%= w.wednesday_start.strftime("%H:%M") %> - <%= w.wednesday_end.strftime("%H:%M") %></td>
+    <td><%= w.thursday_start.strftime("%H:%M") %> - <%= w.thursday_end.strftime("%H:%M") %></td>
+    <td><%= w.friday_start.strftime("%H:%M") %> - <%= w.friday_end.strftime("%H:%M") %></td>
+    <td style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.saturday_start.strftime("%H:%M") %> - <%= w.saturday_end.strftime("%H:%M") %></td>
+  </tr>
+  <tr class="totals">
+    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #ACACAC) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#ACACAC));"><%= a= (w.sunday_end.to_time - w.sunday_start.to_time) /60 / 60 %> Hours</th>
+    <th><%= b=(w.monday_end.to_time - w.monday_start.to_time) / 60 / 60 %> Hours</th>
+    <th><%= c=(w.tuesday_end.to_time - w.tuesday_start.to_time) / 60 / 60 %> Hours</th>
+    <th><%= d=(w.wednesday_end.to_time - w.wednesday_start.to_time) / 60 / 60 %> Hours</th>
+    <th><%= e=(w.thursday_end.to_time - w.thursday_start.to_time) / 60 / 60 %> Hours</th>
+    <th><%= f=(w.friday_end.to_time - w.friday_start.to_time) / 60 / 60 %> Hours</th>
+    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #ACACAC) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#ACACAC));"><%= g=(w.saturday_end.to_time - w.saturday_start.to_time) / 60 / 60 %> Hours</th>
+  </tr>
+</table>
+  <ul class="total">
+    <li><%= link_to "Update", :action => 'edit', :id => w.id, :method => 'get' %></li>
+    <li><%= link_to "Send E-mail", :action => 'mail', :week_id => w.id %></li>
+    <li><%= link_to "Delete Log", :action => 'destroy', :week_id => w.id, :method => 'delete' %></li>
+    <li style="float: right;"><h3><%= a + b + c + d + e + f + g %> Total Hours</h3></li>
+  </ul>
+</div>
+<% end %>
