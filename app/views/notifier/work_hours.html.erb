@@ -1,1 +1,35 @@
-this is an hours <%= @hours.name %>
+<%= @hours.sunday_start.to_date.to_formatted_s(:long) %> - <%= @hours.saturday_start.to_date.to_formatted_s(:long) %>
+<br />
+<br />
+
+<b><u><%= @hours.monday_start.strftime("%A") %></b></u><br />
+<%= @hours.monday_start.strftime("%H:%M") %> - <%= @hours.monday_end.strftime("%H:%M") %> - <b><%= a=(@hours.monday_end.to_time - @hours.monday_start.to_time) / 60 / 60 %> Hours Total</b>
+
+<br />
+<br />
+<b><u><%= @hours.tuesday_start.strftime("%A") %></b></u><br />
+<%= @hours.tuesday_start.strftime("%H:%M") %> - <%= @hours.tuesday_end.strftime("%H:%M") %> - <b><%= b=(@hours.tuesday_end.to_time - @hours.tuesday_start.to_time) / 60 / 60 %> Hours Total</b>
+
+
+<br />
+<br />
+<b><u><%= @hours.wednesday_start.strftime("%A") %></b></u><br />
+<%= @hours.wednesday_start.strftime("%H:%M") %> - <%= @hours.wednesday_end.strftime("%H:%M") %> - <b><%= c=(@hours.wednesday_end.to_time - @hours.wednesday_start.to_time) / 60 / 60 %> Hours Total</b>
+
+
+<br />
+<br />
+<b><u><%= @hours.thursday_start.strftime("%A") %></b></u><br />
+<%= @hours.thursday_start.strftime("%H:%M") %> - <%= @hours.thursday_end.strftime("%H:%M") %> - <b><%= d=(@hours.thursday_end.to_time - @hours.thursday_start.to_time) / 60 / 60 %> Hours Total</b>
+
+
+<br />
+<br />
+<b><u><%= @hours.friday_start.strftime("%A") %></b></u><br />
+<%= @hours.friday_start.strftime("%H:%M") %> - <%= @hours.friday_end.strftime("%H:%M") %> - <b><%= e=(@hours.friday_end.to_time - @hours.friday_start.to_time) / 60 / 60 %> Hours Total
+<br />
+<br />
+<%= a + b + c + d + e %> Total Hours</b>
+<br/>
+<br/>
+Sent from dillonhafer.com

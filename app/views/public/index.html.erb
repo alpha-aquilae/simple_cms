@@ -1,11 +1,31 @@
+<style>
+.logger a {
+  color: #516F77;
+  float:right; 
+  padding:8px; 
+  border:1px solid #516F77;
+  border-radius:8px;
+  text-decoration:none;
+  background: -moz-linear-gradient(center top , #FEFEFE, #AFCBD3) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#AFCBD3));
+}
+
+.logger a:hover {
+  background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));
+}
+</style>
 <script>
  $(document).ready(function(){
     $("p.hidden").hide();
+    $(".logger").hide();
+    $(".secret").click(function() {$(".logger").fadeToggle('slow');});
     $(".toggle").click(function() {$("p.hidden").fadeToggle('slow');});
     });
 </script>
-<%= link_to "hours", :controller => 'weeks', :action => 'index' %>
 <h3 class="toggle">Welcome to DillonHafer.com</h3>
 <p class="hidden">This site was started to gain experience in Web Application Development using Ruby on Rails 3, CSS, HTML, SQL, and Unobtrusive JavaScript. Currently we only have one application. It's purpose is to manage/track prospective CDL drivers and their progress.</p>
 <p class="hidden">This site uses CSS3 and HTML5. We encourage you to use a modern web browser(FireFox 4 / Google Chrome) for the best veiwing experience.</p>
 <p class="hidden"><strong>Please contact Dillon for questions.</strong></p>
+
+<div class="logger"><%= link_to "shhh....its secret...", :controller => "weeks", :action => "index" %></div>

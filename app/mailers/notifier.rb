@@ -3,6 +3,6 @@ class Notifier < ActionMailer::Base
 
   def work_hours(hours)
     @hours = hours
-    mail(:to => "dhafer@hylesanderson.edu", :subject => "Hafer Work Hours")
+    mail(:to => "tmason@hylesanderson.edu", :subject => "Hafer Work Hours")
   end
 end
