@@ -2,10 +2,8 @@
 /* loads after public.css */
 
 /* Structure */
-#content { padding-left: 100px; padding-right: 100px; }
-#content h2 { width: 760px; text-align: center; }
 
-.login form { margin: 100px 250px; }
+.login form { margin: 50px 250px; }
 .menu .identity { text-align: center; }
 .menu ul { margin: 3em 250px; list-style: none; }
 .menu ul li { margin-bottom: 1em; }
@@ -14,20 +12,43 @@ a { text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 /* large action buttons */
-a.action { float: right; padding: 2px 5px; margin: 0 0 1em 1em; background: #94B26F; color: #4C2516;  -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; border: 1px solid #4C2516; text-decoration: none; font-size: 0.8em; text-align: center; }
-a.action:hover { background: #B6D491; }
+a.action { float: right; font-weight:bold;
+  color:white;
+  text-decoration:none;
+  margin-left: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color:#65B7FD;
+  border-radius: 4px;
+  box-shadow: 0px 0px 3px 1px #333;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, #5470A8),
+    color-stop(0.62, #9CB0FF)
+    );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    #5470A8 0%,
+    #9CB0FF 62%
+    );
+  text-align:center;
+}
+a.action:hover { color: lightblue; }
 a.actiony { width: 760px; text-align: center; color: white;}
 a.actiony:hover {text-decoration: none}
 
 /* small action buttons */
-.actions { width: 250px;}
-.actions a.action { float: left; min-width: 3.5em; 
-  padding: 1px 2px; margin: 2px 5px; font-size: 0.7em; }
+.actions { width: 245px;}
+.actions a.action { float: left; min-width: .5em; 
+  padding: 1px 3px; margin: 2px 5px; font-size: 0.7em; }
 
 /* CRUD */
-.notice { margin-left: 20%; height: 1.25em; width: 30em; padding: 0.5em; text-align: center;
-  background: white; color: green; border: 1px solid black; text-shadow: 1px 1px 2px black; box-shadow: 0 0 10px 2px #111;}
-.back-link { color:black; font-size: 0.8em; margin-bottom: 1em; }
+.notice { color: green;}
+a.back-link { color: black; font-size: 0.8em; margin-bottom: 1em; }
 .form-buttons { text-align: center; margin: 1em 0; }
 
 .list table { clear: both; width: 100%; }

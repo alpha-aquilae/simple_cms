@@ -1,25 +1,14 @@
 <style>
-h1 a {
-  text-decoration:none;
-  color: white;
-  
-}
-
-h1 {
-  text-align:center;
-  text-shadow: 2px 2px 2px #333;
-}
-
 table {
   border-collapse:collapse;
   border: 2px solid gray;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header th{
   background: -moz-linear-gradient(center top , #FEFEFE, #ADD8E6) repeat scroll 0 0 #EEEEEE;
-}
-
-.header td {
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));
 }
 
 td {
@@ -38,30 +27,6 @@ th {
   border: 1px solid gray;
 }
 
-li {
-  list-style-type: none;
-  display: inline;
-}
-
-
-li a {
-  color:black;
-  font-weight: bold;
-  padding-left: 12px;
-  padding-right: 12px;
-  border: 1px solid black;
-  border-radius: 8px;
-  background: white;
-  text-decoration:none;
-  background: -moz-linear-gradient(center top , #FEFEFE, #CDCDCD) repeat scroll 0 0 #EEEEEE;
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#CDCDCD));
-}
-
-li a:hover {
-  background: -moz-linear-gradient(center top , #FEFEFE, #ACACAC) repeat scroll 0 0 #EEEEEE;
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#ACACAC));
-}
-
 .totals th {
   background: -moz-linear-gradient(center top , #FEFEFE, #CDCDCD) repeat scroll 0 0 #EEEEEE;
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#CDCDCD));
@@ -72,38 +37,22 @@ li a:hover {
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));
 }
 
-body {
-  background-color: #C0DEED;
-  font-family: sans-serif;
-  height: 1000px;
-  padding: 2em;
-  background-image: url("images/bg-clouds.png");
-  background-repeat: repeat-x;
+#log {
+  margin-top:20px;
 }
 
-div#logs {
-  position:relative;
-  margin: 14px;
-  width: 880px;
-  border-radius: 12px;
-  border: 2px solid #333;
-  padding: 1em;
-  background: -moz-linear-gradient(center top , #A2C2E5, #B7D8FF 100%) repeat scroll 0 0 #EEEEEE;
-  background: -webkit-gradient(linear, 0 0, 0.98 bottom, from(#FEFEFE), to(#ACACAC));
-  font-family: sans-serif;
-  box-shadow: 2px 2px 2px #333;
-}
 </style>
 
 
-<h1 style="text-align:center; color:white; text-shadow: 2px 2px 2px #333;"><%= link_to "iTime", :action => "new" %></h1>
+<h2>iTime</h2>
+<%= link_to("New week", {:action => 'new'}, :class => 'action new') %>
+<br />
+<div id="log">
 <% @weeks.each do |w| %>
-<div id="logs">
-<h2 style="text-align:center; color:white; text-shadow: 1px 1px 2px #333;"><%= w.sunday_start.to_date.to_formatted_s(:long) %> - <%= w.saturday_start.to_date.to_formatted_s(:long) %></h2>
+<h3 style="text-align:left; text-shadow: 1px 1px 2px #EEE;"><%= w.sunday_start.to_date.to_formatted_s(:long) %> - <%= w.saturday_start.to_date.to_formatted_s(:long) %></h3>
 <table>
   <tr class="header">
-    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE;
-  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.sunday_start.strftime("%a") %></th>
+    <th style="background: -moz-linear-gradient(center top , #FEFEFE, #8FB6C1) repeat scroll 0 0 #EEEEEE; background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#8FB6C1));"><%= w.sunday_start.strftime("%a") %></th>
     <th><%= w.monday_start.strftime("%a") %></th>
     <th><%= w.tuesday_start.strftime("%a") %></th>
     <th><%= w.wednesday_start.strftime("%a") %></th>
@@ -136,11 +85,12 @@ div#logs {
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#FEFEFE), to(#ACACAC));"><%= g=(w.saturday_end.to_time - w.saturday_start.to_time) / 60 / 60 %> Hours</th>
   </tr>
 </table>
-  <ul class="total">
-    <li><%= link_to "Update", :action => 'edit', :id => w.id, :method => 'get' %></li>
-    <li><%= link_to "Send E-mail", :action => 'mail', :week_id => w.id %></li>
-    <li><%= link_to "Delete Log", :action => 'destroy', :week_id => w.id, :method => 'delete' %></li>
-    <li style="float: right;"><h3><%= a + b + c + d + e + f + g %> Total Hours</h3></li>
+  <ul>
+    <li class="button" style="display: inline;"><%= link_to "Update", :action => 'edit', :id => w.id, :method => 'get' %></li>
+    <li class="button" style="display: inline;"><%= link_to "Send E-mail", :action => 'mail', :week_id => w.id %></li>
+    <li class="button" style="display: inline;"><%= link_to "Delete Log", :action => 'destroy', :week_id => w.id, :method => 'delete' %></li>
+    <li style="float: top-right; display:inline;"><h3><%= a + b + c + d + e + f + g %> Total Hours</h3></li>
   </ul>
-</div>
+<hr />
 <% end %>
+</div>

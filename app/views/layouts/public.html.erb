@@ -8,27 +8,33 @@
     <meta name="author" content="Dillon Hafer">
     <%= stylesheet_link_tag('public') %>
     <%= javascript_include_tag('jquery') %>
+   <script> 
+ $(document).ready(function(){
+    $(".h").click(function() {$("#main").fadeToggle('slow');});
+    });
+</script>
   </head>
   <body>
     <div id="header">
-    	<ul>
-    	<%= link_to("DillonHafer.com", {:controller => 'public', :action => 'index'}, :class => 'logo') %>
-	    	<tr>
-	    		<td><%= link_to("Admin", :controller => 'admin', :action => 'index') %></td>
-	    		<td>&nbsp;</td>
-	    		<td><%= link_to("Home", :action => 'index') %></td>
-	    	</tr>
-    	</ul>
+    	<%= link_to(image_tag("dh-logo.png"), {:controller => 'public', :action => 'index'}, :class => 'logo') %>
+	    <ul>
+	    	<li style="display:inline;"><%= link_to("Resources", :action => 'show') %></li>
+	    	<li style="display:inline;"><%= link_to("CDL", :action => 'cdls') %></li>
+        <% if session[:username] %>
+	    	<li style="display:inline;"><%= link_to("Admin", :controller => 'access', :action => 'index') %></li>
+        <li style="display:inline; padding-right:4px;"><%= link_to("Log out", :controller => 'access', :action => 'logout') %></li>
+        User: <b><%= session[:username] %></b>
+        <% else %>
+	    	<li style="display:inline;"><%= link_to("Log in", :controller => 'access', :action => 'login') %></li>
+        <% end %>
+	    </ul>
     </div>
-      <div id="navigation">
-      		<%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects, :cdls => @cdls })%>
-      </div>
     <div id="main">
       <div id="content">
         <%= yield %>
       </div>
     </div>
-      <br style="clear: both;" />
-      <p style="text-shadow: 2px 2px 2px black; text-align:center;"><span class="secret">&copy;</span> DillonHafer.com / Dillon Hafer</p>
+   
+    <div id="footer">Copyright <span class="h">©</span> 2011 DillonHafer.com</div>
   </body>
 </html>

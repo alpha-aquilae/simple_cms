@@ -1,7 +1,9 @@
 class WeeksController < ApplicationController
   before_filter :confirm_logged_in
+  layout 'admin'
+
   def index
-    @weeks = Week.all
+    @weeks = Week.order(:sunday_start).all
   end
 
   def new

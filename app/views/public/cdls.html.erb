@@ -1,0 +1,17 @@
+<style>
+.sname {
+  list-style-type:none;
+}
+
+.linkers a {
+  color: black;
+}
+</style>
+<li class="sname">CDL Prospects</li>
+
+<ul style="float:left;">
+  <% @cdls.each do |cdl| %>
+    <li class="linkers"><%= link_to_unless_current(cdl.name, :action => 'show_cdls', :id => cdl.id) %></li>
+	<% end %>
+</ul>
+<div style="position:relative;top:25px;right:-500px;"><%= image_tag "bus.png", :style => "height:150px; width:150px;" %></div>

@@ -1,12 +1,19 @@
-<h2><%= @page.name %></h2>
+<style>
+.sname {
+  list-style-type:none;
+}
 
-<% @page.sections.visible.sorted.each do |section| %>
-	<div class="section">
-		<% case section.content_type 
-		      when 'HTML' %>
-		      	<%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a'])) %>
-		    <% when 'text' %>
-		    	<p><%= section.content %></p>
-		    <% end %>
-		</div>
+.linkers a {
+  color: black;
+}
+</style>
+
+<% @subjects.each do |subject| %>
+	<li class="sname"><b><%= subject.name %></b></li>
+		<ul>
+			<% subject.pages.visible.sorted.each do |page| %>
+			<li class="linkers"><%= link_to_unless_current(page.name, :action => 'show', :id => page.permalink) %></li>
+			<% end %>
+		</ul>
+	</li>
 <% end %>

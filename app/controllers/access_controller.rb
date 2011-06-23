@@ -19,10 +19,10 @@ class AccessController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
-      flash[:notice] = "You are now logged in. (if you didn't know that)"
+      flash[:notice] = "You are now logged in."
       redirect_to(:action => 'menu')
     else
-      flash[:notice] = "Invalid Input."
+      flash[:error] = "Invalid Input."
       redirect_to(:action => 'login')
     end
   end
@@ -31,7 +31,7 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     session[:username] = nil
     flash[:notice] = "You are now logged out."
-    redirect_to(:action => "login")
+    redirect_to(:controller => 'public', :action => "index")
   end
   
  

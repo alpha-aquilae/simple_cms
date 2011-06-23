@@ -1,6 +1,9 @@
-
-
-	<div class="section">
+<style>
+a:hover {
+  text-decoration:none;
+  color:lightblue;
+}
+</style>
 		<h2><%= @cdl.name %></h2>
 		
 		<table class="listing" summary="Subject list">
@@ -28,4 +31,5 @@
       <td>Skills Test</th>
     </tr> 
   </table>
-  </div>
+<br />
+<%= link_to "back", {:action => "cdls"}, :class => "button" %>
