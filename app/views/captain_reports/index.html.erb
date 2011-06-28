@@ -15,17 +15,19 @@
   </tr>
   <% @reports.each do |r| %>
   <tr>
-    <td><%= r.route %></td>
-    <td><%= r.date.strftime("%D") %></td>
-    <td><%= r.number_salvations %></td>
-    <td><%= r.number_baptisms %></td>
-    <td><%= r.worker_attendance %></td>
-    <td><%= r.rider_attendance %></td>
-    <td><%= r.number_first_time_visitors %></td>
-    <td><%= r.number_night_riders %></td>
-    <td><%= r.complete ? "yes" : "" %></td>
-    <td><%= link_to "edit", :action => "admin_edit", :id => r.id %>
-    <%= link_to "dlt", :action => "destroy", :id => r.id %></td>
+    <td style="height: 22px;"><%= r.route %></td>
+    <td style="height: 22px;"><%= r.date.strftime("%D") %></td>
+    <td style="height: 22px;"><%= r.number_salvations %></td>
+    <td style="height: 22px;"><%= r.number_baptisms %></td>
+    <td style="height: 22px;"><%= r.worker_attendance %></td>
+    <td style="height: 22px;"><%= r.rider_attendance %></td>
+    <td style="height: 22px;"><%= r.number_first_time_visitors %></td>
+    <td style="height: 22px;"><%= r.number_night_riders %></td>
+    <td style="height: 22px;"><%= r.complete ? "yes" : "" %></td>
+    <td style="border:none;height: 22px;">
+    <%= link_to "edit", {:action => "admin_edit", :id => r.id}, :class => "button" %>
+    <%= link_to "delete", {:action => "destroy", :id => r.id}, :class => "button" %>
+    </td>
   </tr>
   <% end %>
 </table>    
