@@ -1,0 +1,38 @@
+<% @page_title = "#{@report.route}" %>
+
+<%= link_to("back", {:action => 'list'}, :class => 'button') %>
+
+<div class="report show">
+  <h2>Captain Report for <%= @report.route %> on <%= @report.date.strftime("%B %d, %Y") %></h2>
+
+ <table class="Pages">
+  <tr>
+    <th style="text-align:right;">Salvations</th>
+    <td><%= @report.number_salvations %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Baptisms</th>
+    <td><%= @report.number_baptisms %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Number of Workers</th>
+    <td><%= @report.worker_attendance %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Number of Riders</th>
+    <td><%= @report.rider_attendance %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Visitors</th>
+    <td><%= @report.number_first_time_visitors %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Night Bus</th>
+    <td><%= @report.number_night_riders %></td>
+  </tr>
+  <tr>
+    <th style="text-align:right;">Total Attendance:</th>
+    <th><%= @report.worker_attendance + @report.rider_attendance %></th>
+  </tr>
+</table>    
+</div>

@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
 
   scope :named, lambda {|first,last| where(:first_name => first, :last_name => last)}
   scope :sorted, order("users.last_name ASC, users.first_name ASC")
+  scope :captains, where("users.captain = true")
 
   attr_protected :hashed_password, :salt
   

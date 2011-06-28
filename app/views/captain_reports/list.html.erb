@@ -1,0 +1,18 @@
+<% @page_title = "Report List" %>
+
+<div class="report list">
+
+  <h2>Completed Captain's Reports</h2>
+  <ul>
+    <% @complete_reports.each do |r| %>
+      <li><%= link_to r.date.strftime("%D"), {:action => "show", :id => r.id} %></li>
+    <% end %>
+  </ul>
+
+  <h2>Pending Captain's Reports</h2>
+  <ul>
+    <% @incomplete_reports.each do |r| %>
+      <li><%= link_to r.date.strftime("%D"), {:action => "edit", :id => r.id} %></li>
+    <% end %>
+  </ul>
+</div>

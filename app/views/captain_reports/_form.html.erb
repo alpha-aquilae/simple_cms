@@ -1,0 +1,33 @@
+<%= error_messages_for(@report) %>
+
+<table summary="Report form fields">
+  <tr>
+    <td><%= f.label :number_salvations, "Number of Salvations" %></td>
+    <td><%= f.select :number_salvations, 0..99 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :number_baptisms, "Number of Baptisms" %></td>
+    <td><%= f.select :number_baptisms, 0..99 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :worker_attendance, "Number of Workers" %></td>
+    <td><%= f.select :worker_attendance, 0..49 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :rider_attendance, "Number of Riders" %></td>
+    <td><%= f.select :rider_attendance, 0..863 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :number_first_time_visitors, "Number of First-Time Visitors" %></td>
+    <td><%= f.select :number_first_time_visitors, 0..99 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :number_night_riders, "Number of Night Bus Riders" %></td>
+    <td><%= f.select :number_night_riders, 0..99 %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :comments %></td>
+    <td><%= f.text_area :comments %></td>
+  </tr>
+ 
+</table>

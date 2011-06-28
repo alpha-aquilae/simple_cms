@@ -14,15 +14,18 @@
 	    	<%= link_to(image_tag("dh-logo.png"), {:controller => 'public', :action => 'index'}, :class => 'logo') %>
     	<ul>
         <% if session[:admin] %>
+        <li style="display:inline;"><%= link_to("Rpt", :controller => 'captain_reports') %></li>
         <li style="display:inline;"><%= link_to("iTime", :controller => 'weeks') %></li>
         <li style="display:inline;"><%= link_to("Content", :controller => 'subjects') %></li>
     		<li style="display:inline;"><%= link_to("Users", :controller => 'users') %></li>
 	    	<li style="display:inline;"><%= link_to("CDL", :controller => 'cdls') %></li>
-        <li style="display:inline; padding-right:4px;"><%= link_to("Log out", :controller => 'access', :action => 'logout') %></li>
-        User: <b><%= session[:username] %></b>
 	    	<% else %>
         <li style="display:inline;"><%= link_to("Home", :controller => 'public', :action => 'index') %></li>
 	    	<% end %>
+        <% if session[:username] %>
+        <li style="display:inline; padding-right:4px;"><%= link_to("Log out", :controller => 'access', :action => 'logout') %></li>
+        User: <b><%= session[:username] %></b>
+        <% end %>
     	</ul>
     </div>
     <div id="main">

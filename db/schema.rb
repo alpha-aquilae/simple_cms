@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110609022013) do
+ActiveRecord::Schema.define(:version => 20110628013623) do
 
   create_table "admin_users_pages", :id => false, :force => true do |t|
     t.integer "admin_user_id"
@@ -18,6 +18,22 @@ ActiveRecord::Schema.define(:version => 20110609022013) do
   end
 
   add_index "admin_users_pages", ["admin_user_id", "page_id"], :name => "index_admin_users_pages_on_admin_user_id_and_page_id"
+
+  create_table "captain_reports", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "route"
+    t.datetime "date"
+    t.integer  "number_salvations"
+    t.integer  "rider_attendance"
+    t.integer  "worker_attendance"
+    t.integer  "number_baptisms"
+    t.integer  "number_first_time_visitors"
+    t.integer  "number_night_riders"
+    t.string   "comments"
+    t.boolean  "complete",                   :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cdls", :force => true do |t|
     t.string   "name"

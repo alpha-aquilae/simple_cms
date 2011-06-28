@@ -1,0 +1,34 @@
+<% @page_title = "New Captain Report" %>
+
+<%= link_to("back", {:action => 'index'}, :class => 'button') %>
+
+<div class="report new">
+  <h2>Captain's Report</h2>
+
+  <%= form_for(:report, :url => {:action => 'create', :complete => true, :user_id => session[:user_id]}) do |f| %>
+    <table>
+    <tr>
+      <td><%= f.label(:user_id) %></td>
+      <td><%= f.select :user_id, User.captains.map {|d| [d.name, d.id]} %></td>
+    </tr>
+    <tr>
+      <td><%= f.label(:route) %></td>
+      <td><%= f.select :route, %w[97-1 97-2 97-4 97-5 97-6 97-7 97-9 97-13]%></td>
+    </tr>
+    <tr>
+      <td><%= f.label(:date) %></td>
+      <td><%= f.text_field :date, :class => "date" %></td>
+    </tr>
+    <tr>
+      <td><%= f.label(:complete) %></td>
+      <td><%= f.check_box :complete %></td>
+    </tr>
+    </table>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Submit") %>
+    </div>
+    
+  <% end %>
+</div>

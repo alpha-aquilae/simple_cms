@@ -1,0 +1,32 @@
+<% @page_title = "Report List" %>
+<%= link_to "New", {:action => "new"}, :class => "button" %>
+<div class="report list">
+<table>
+  <tr>
+    <th>Route</th>
+    <th>Date</th>
+    <th>Salvations</th>
+    <th>Baptisms</th>
+    <th>Workers</th>
+    <th>Riders</th>
+    <th>Visitors</th>
+    <th>Night Bus</th>
+    <th>Complete?</th>
+  </tr>
+  <% @reports.each do |r| %>
+  <tr>
+    <td><%= r.route %></td>
+    <td><%= r.date.strftime("%D") %></td>
+    <td><%= r.number_salvations %></td>
+    <td><%= r.number_baptisms %></td>
+    <td><%= r.worker_attendance %></td>
+    <td><%= r.rider_attendance %></td>
+    <td><%= r.number_first_time_visitors %></td>
+    <td><%= r.number_night_riders %></td>
+    <td><%= r.complete ? "yes" : "" %></td>
+    <td><%= link_to "edit", :action => "admin_edit", :id => r.id %>
+    <%= link_to "dlt", :action => "destroy", :id => r.id %></td>
+  </tr>
+  <% end %>
+</table>    
+</div>
