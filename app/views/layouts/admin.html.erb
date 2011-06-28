@@ -13,10 +13,10 @@
     <div id="header">
 	    	<%= link_to(image_tag("dh-logo.png"), {:controller => 'public', :action => 'index'}, :class => 'logo') %>
     	<ul>
-        <% if session[:username]  %>
+        <% if session[:admin] %>
         <li style="display:inline;"><%= link_to("iTime", :controller => 'weeks') %></li>
         <li style="display:inline;"><%= link_to("Content", :controller => 'subjects') %></li>
-    		<li style="display:inline;"><%= link_to("Admin Users", :controller => 'admin_users') %></li>
+    		<li style="display:inline;"><%= link_to("Users", :controller => 'users') %></li>
 	    	<li style="display:inline;"><%= link_to("CDL", :controller => 'cdls') %></li>
         <li style="display:inline; padding-right:4px;"><%= link_to("Log out", :controller => 'access', :action => 'logout') %></li>
         User: <b><%= session[:username] %></b>
@@ -35,7 +35,8 @@
         <%= yield %>
       </div>
     </div>
-    <div id="footer">Copyright © 2011 DillonHafer.com</p>
-    </div>
+
+    <div id="footer">Copyright © 2011 DillonHafer.com</p></div>
+    <div>&nbsp;</div>
   </body>
 </html>

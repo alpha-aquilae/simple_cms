@@ -12,4 +12,14 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
+  def confirm_admin
+    unless session[:admin]
+      flash[:notice] = "You do not have permission to be there. This incident will be reported."
+      redirect_to(:controller => 'public', :action => 'bad_person')
+      return false
+    else
+      return true
+    end
+  end
 end

@@ -21,4 +21,8 @@ class PublicController < ApplicationController
     	redirect_to(:action => 'index') unless @cdl
   end 
 
+  def bad_person
+  
+  end
+
 end

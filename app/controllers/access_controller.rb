@@ -15,12 +15,13 @@ class AccessController < ApplicationController
   end
 
   def attempt_login
-    authorized_user = AdminUser.authenticate(params[:username], params[:password])
+    authorized_user = User.authenticate(params[:username], params[:password])
     if authorized_user
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
+      session[:admin] = authorized_user.admin
       flash[:notice] = "You are now logged in."
-      redirect_to(:action => 'menu')
+      redirect_to(:controller =>"public", :action => 'index')
     else
       flash[:error] = "Invalid Input."
       redirect_to(:action => 'login')
@@ -30,6 +31,7 @@ class AccessController < ApplicationController
   def logout
     session[:user_id] = nil
     session[:username] = nil
+    session[:admin] = nil
     flash[:notice] = "You are now logged out."
     redirect_to(:controller => 'public', :action => "index")
   end

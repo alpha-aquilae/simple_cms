@@ -10,20 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110608022013) do
-
-  create_table "admin_users", :force => true do |t|
-    t.string   "first_name",      :limit => 25
-    t.string   "last_name",       :limit => 50
-    t.string   "email",           :limit => 100, :default => "", :null => false
-    t.string   "hashed_password", :limit => 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "username",        :limit => 25
-    t.string   "salt",            :limit => 40
-  end
-
-  add_index "admin_users", ["username"], :name => "index_admin_users_on_username"
+ActiveRecord::Schema.define(:version => 20110609022013) do
 
   create_table "admin_users_pages", :id => false, :force => true do |t|
     t.integer "admin_user_id"
@@ -114,6 +101,22 @@ ActiveRecord::Schema.define(:version => 20110608022013) do
     t.datetime "updated_at"
     t.integer  "total"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "first_name",      :limit => 25
+    t.string   "last_name",       :limit => 50
+    t.string   "email",           :limit => 100, :default => "", :null => false
+    t.string   "hashed_password", :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "username",        :limit => 25
+    t.string   "salt",            :limit => 40
+    t.boolean  "admin"
+    t.boolean  "captain"
+  end
+
+  add_index "users", ["username"], :name => "index_admin_users_on_username"
+  add_index "users", ["username"], :name => "index_users_on_username"
 
   create_table "weeks", :force => true do |t|
     t.string   "name"

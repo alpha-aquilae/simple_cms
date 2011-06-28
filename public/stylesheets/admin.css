@@ -47,7 +47,6 @@ a.actiony:hover {text-decoration: none}
   padding: 1px 3px; margin: 2px 5px; font-size: 0.7em; }
 
 /* CRUD */
-.notice { color: green;}
 a.back-link { color: black; font-size: 0.8em; margin-bottom: 1em; }
 .form-buttons { text-align: center; margin: 1em 0; }
 

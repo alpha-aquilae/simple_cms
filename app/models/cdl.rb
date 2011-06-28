@@ -1,6 +1,6 @@
 class Cdl < ActiveRecord::Base
 
-  belongs_to :admin_user
+  belongs_to :user
   has_many :trips
   validates_presence_of :name
 end

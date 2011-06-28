@@ -2,6 +2,7 @@ class CdlsController < ApplicationController
 
  layout 'admin'
   before_filter :confirm_logged_in 
+  before_filter :confirm_admin 
   def index
     list
     render('list')

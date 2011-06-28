@@ -2,6 +2,7 @@ class PagesController < ApplicationController
 
   layout 'admin'
   before_filter :confirm_logged_in
+  before_filter :confirm_admin
   before_filter :find_subject
    
   def index

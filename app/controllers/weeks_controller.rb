@@ -1,5 +1,6 @@
 class WeeksController < ApplicationController
   before_filter :confirm_logged_in
+  before_filter :confirm_admin
   layout 'admin'
 
   def index
