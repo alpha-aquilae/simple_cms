@@ -17,7 +17,7 @@
       <td><%= au.username %></td>
       <td><%= au.name %> </td>
       <td><%= au.admin ? "true" : "" %> </td>
-      <td><%= au.admin ? "true" : "" %> </td>
+      <td><%= au.captain ? "true" : "" %> </td>
       <td><%= au.email %></td>
       <td class="actions">
         <%= link_to("Edit", {:action => 'edit', :id => au.id}, :class => 'action edit') %>

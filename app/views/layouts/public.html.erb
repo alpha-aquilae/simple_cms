@@ -23,6 +23,9 @@
         <% if session[:admin] %>
 	    	<li style="display:inline;"><%= link_to("Admin", :controller => 'access', :action => 'index') %></li>
         <% end %>
+        <% if session[:captain] %>
+	    	<li style="display:inline;"><%= link_to("Captain Reports", :controller => 'access', :action => 'index') %></li>
+        <% end %>
         <% if session[:username] %>
         <li style="display:inline; padding-right:4px;"><%= link_to("Log out", :controller => 'access', :action => 'logout') %></li>
         User: <b><%= session[:username] %></b>

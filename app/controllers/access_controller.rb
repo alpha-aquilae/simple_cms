@@ -20,6 +20,7 @@ class AccessController < ApplicationController
       session[:user_id] = authorized_user.id
       session[:username] = authorized_user.username
       session[:admin] = authorized_user.admin
+      session[:captain] = authorized_user.captain
       flash[:notice] = "You are now logged in."
       redirect_to(:controller =>"public", :action => 'index')
     else
@@ -32,6 +33,7 @@ class AccessController < ApplicationController
     session[:user_id] = nil
     session[:username] = nil
     session[:admin] = nil
+    session[:captain] = nil
     flash[:notice] = "You are now logged out."
     redirect_to(:controller => 'public', :action => "index")
   end
