@@ -55,18 +55,7 @@ span.status.false {background: red; color: red}
   box-shadow: -1px -1px 6px #333;
   border-radius: 10px 10px 0px 0px;
   background-color: white;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.05, #053A85),
-    color-stop(0.53, #4A69B8)
-);
-background-image: -moz-linear-gradient(
-    center bottom,
-    #053A85 5%,
-    #4A69B8 53%
-);
+  background-image: url("/images/backer-txt2.jpg");
 }
 
 #header ul {
@@ -90,13 +79,13 @@ background-image: -moz-linear-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0, #5470A8),
-    color-stop(0.62, #9CB0FF)
+    color-stop(0, #1e6086),
+    color-stop(0.62, #6a9CF4)
 );
 background-image: -moz-linear-gradient(
     center bottom,
     #5470A8 0%,
-    #9CB0FF 62%
+    #6A99E0 62%
 );
 }
 
@@ -124,7 +113,7 @@ background-image: -moz-linear-gradient(
 -----------------*/
 #footer { 
   width: 902px;
-  height: 15px;
+  height: 25px;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
@@ -132,20 +121,10 @@ background-image: -moz-linear-gradient(
   box-shadow: -1px 3px 6px #333;
   border-radius: 0px 0px 10px 10px;
   text-align:center;
+  vertical-align:middle;
   color: white;
   text-shadow: -1px 2px 6px #333;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.05, #053A85),
-    color-stop(0.53, #4A69B8)
-);
-background-image: -moz-linear-gradient(
-    center bottom,
-    #053A85 5%,
-    #4A69B8 53%
-);
+  background-image: url("/images/backer-txt2.jpg");
 }
 
 /*    Content
@@ -171,12 +150,12 @@ background-image: -moz-linear-gradient(
     left bottom,
     left top,
     color-stop(0, #5470A8),
-    color-stop(0.62, #9CB0FF)
+    color-stop(0.62, #6a99e0)
 );
 background-image: -moz-linear-gradient(
     center bottom,
     #5470A8 0%,
-    #9CB0FF 62%
+    #6A99E0 62%
 );
 }
 
