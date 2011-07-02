@@ -173,3 +173,68 @@ a:visited.button {
   text-decoration:none;
   color:white;
 }
+
+
+.bday-header {
+  margin-left:auto;
+  margin-right:auto;
+  width:600px;
+  color: white;
+  text-shadow:2px 2px 2px #333;
+  border: 1px solid #333;
+  border-radius:12px;
+  background-image: url("/images/backer-txt2.jpg");
+  box-shadow: 2px 2px 2px gray;
+  padding: 8px;
+  text-align:center;
+}
+
+.good_birthday {
+  font-size:14pt;
+  width:350px;
+  text-align:center;
+  font-weight:bold;
+  color: white;
+  text-shadow:1px 1px 4px #333;
+  border: 1px solid #333;
+  border-radius:12px;
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.08, rgb(57,73,143)),
+    color-stop(1, rgb(130,192,240))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(57,73,143) 8%,
+    rgb(130,192,240) 100%
+);
+  box-shadow: 2px 2px 2px gray;
+  padding: 24px;
+}
+
+.bad_birthday {
+  font-size:14pt;
+  width:350px;
+  text-align:center;
+  font-weight:bold;
+  color: darkred;
+  text-shadow:1px 1px 4px #FFF;
+  border: 1px solid #333;
+  border-radius:12px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.08, rgb(166,0,0)),
+    color-stop(1, rgb(245,182,182))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(166,0,0) 8%,
+    rgb(245,182,182) 100%
+);
+  box-shadow: 2px 2px 2px gray;
+  padding: 24px;
+}

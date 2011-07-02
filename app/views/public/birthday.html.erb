@@ -1,0 +1,9 @@
+<h1 class="bday-header">Could today be your birthday?</h1>
+<p>Enter your birthday to find out.</p>
+<%= form_tag :action => "update_birthday" %>
+<table>
+  <tr>
+    <td><%= select_date(@birthday, :order =>[:month, :day]) %></td>
+    <td><%= submit_tag("Is today my birthday?") %></td>
+  </tr>
+</table>
