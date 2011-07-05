@@ -202,6 +202,7 @@ a:visited.button {
 }
 
 .good_birthday {
+  margin:auto;
   font-size:14pt;
   width:350px;
   text-align:center;
@@ -214,13 +215,13 @@ background-image: -webkit-gradient(
     linear,
     left bottom,
     left top,
-    color-stop(0.08, rgb(57,73,143)),
-    color-stop(1, rgb(130,192,240))
+    color-stop(0, rgb(4,117,0)),
+    color-stop(1, rgb(159,237,160))
 );
 background-image: -moz-linear-gradient(
     center bottom,
-    rgb(57,73,143) 8%,
-    rgb(130,192,240) 100%
+    rgb(4,117,0) 0%,
+    rgb(159,237,160) 100%
 );
   box-shadow: 2px 2px 2px gray;
   -webkit-box-shadow: 2px 2px 2px gray;
@@ -228,7 +229,15 @@ background-image: -moz-linear-gradient(
   padding: 24px;
 }
 
+.good_birthday img {
+  float:left;
+  height:82px;
+  width:82px;
+  margin-top:-18px;
+}
+
 .bad_birthday {
+  margin:auto;
   font-size:14pt;
   width:350px;
   text-align:center;
