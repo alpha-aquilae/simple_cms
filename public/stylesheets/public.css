@@ -53,6 +53,8 @@ span.status.false {background: red; color: red}
   margin-right: auto;
   padding: 12px;
   box-shadow: -1px -1px 6px #333;
+  -webkit-box-shadow: -1px -1px 6px #333;
+  -moz-box-shadow: -1px -1px 6px #333;
   border-radius: 10px 10px 0px 0px;
   background-color: white;
   background-image: url("/images/backer-txt2.jpg");
@@ -75,6 +77,8 @@ span.status.false {background: red; color: red}
   background-color:#65B7FD;
   border-radius: 4px;
   box-shadow: 0px 0px 3px 1px #333;
+  -webkit-box-shadow: 0px 0px 3px 1px #333;
+  -moz-box-shadow: 0px 0px 3px 1px #333;
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -105,6 +109,8 @@ background-image: -moz-linear-gradient(
   background-color: white;
   border: 1px solid gray;
   box-shadow: -1px 1px 6px #333;
+  -webkit-box-shadow: -1px 1px 6px #333;
+  -moz-box-shadow: -1px 1px 6px #333;
   background-color:white;
 }
 
@@ -119,6 +125,8 @@ background-image: -moz-linear-gradient(
   margin-right: auto;
   padding: 12px;
   box-shadow: -1px 3px 6px #333;
+  -webkit-box-shadow: -1px 3px 6px #333;
+  -moz-box-shadow: -1px 3px 6px #333;
   border-radius: 0px 0px 10px 10px;
   text-align:center;
   vertical-align:middle;
@@ -145,6 +153,8 @@ background-image: -moz-linear-gradient(
   background-color:#65B7FD;
   border-radius: 4px;
   box-shadow: 0px 0px 3px 1px #333;
+  -webkit-box-shadow: 0px 0px 3px 1px #333;
+  -moz-box-shadow: 0px 0px 3px 1px #333;
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -185,6 +195,8 @@ a:visited.button {
   border-radius:12px;
   background-image: url("/images/backer-txt2.jpg");
   box-shadow: 2px 2px 2px gray;
+  -webkit-box-shadow: 2px 2px 2px gray;
+  -moz-box-shadow: 2px 2px 2px gray;
   padding: 8px;
   text-align:center;
 }
@@ -211,6 +223,8 @@ background-image: -moz-linear-gradient(
     rgb(130,192,240) 100%
 );
   box-shadow: 2px 2px 2px gray;
+  -webkit-box-shadow: 2px 2px 2px gray;
+  -moz-box-shadow: 2px 2px 2px gray;
   padding: 24px;
 }
 
@@ -236,5 +250,7 @@ background-image: -moz-linear-gradient(
     rgb(245,182,182) 100%
 );
   box-shadow: 2px 2px 2px gray;
+  -webkit-box-shadow: 2px 2px 2px gray;
+  -moz-box-shadow: 2px 2px 2px gray;
   padding: 24px;
 }
