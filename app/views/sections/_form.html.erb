@@ -19,10 +19,10 @@
   </tr>
   <tr>
     <th><%= f.label(:content_type) %></th>
-    <td><%= f.text_field(:content_type) %></td>
+    <td><%= f.select :content_type, %w[text HTML]%></td>
   </tr>
   <tr>
     <th><%= f.label(:content) %></th>
-    <td><%= f.text_field(:content) %></td>
+    <td><%= f.text_area(:content) %></td>
   </tr>
 </table>
