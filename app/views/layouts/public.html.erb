@@ -45,12 +45,10 @@
       </div>
    <% if !flash[:good_birthday].blank? %>
       <div class="good_birthday">
-        <embed src="/good.wav" hidden="true" autostart="true" loop="false">
         <%= flash[:good_birthday] %>
       </div>
       <% end %>
   <% if !flash[:bad_birthday].blank? %>
-        <embed src="/bad.wav" hidden="true" autostart="true" loop="false">
       <div class="bad_birthday">
         <%= flash[:bad_birthday] %>
       </div>
