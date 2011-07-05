@@ -28,7 +28,7 @@
   <div class="section">
     <% case section.content_type
        when 'HTML' %>
-         <%= section.content.html_safe %>
+         <%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'h2', 'i', 'code'])) %>
     <% when 'text' %>
         <p><%= section.content %></p>
     <% end %>
