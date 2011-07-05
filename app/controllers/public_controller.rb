@@ -8,8 +8,8 @@ class PublicController < ApplicationController
 
   def show
       @subjects = Subject.visible.sorted
-    	@page = Page.where('visible').first
-    	redirect_to(:action => 'index') unless @page || @cdl
+    	@page = Page.where(:permalink => params[:id], :visible => true).first
+    	redirect_to(:action => 'index') unless @subjects
     end
     
   def cdls

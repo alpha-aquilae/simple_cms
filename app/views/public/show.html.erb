@@ -7,7 +7,8 @@
   color: black;
 }
 </style>
-
+<% @subjects ||= [] %>
+<% @page ||= [] %>
 <% @subjects.each do |subject| %>
 	<li class="sname"><b><%= subject.name %></b></li>
 		<ul>
@@ -16,4 +17,22 @@
 			<% end %>
 		</ul>
 	</li>
+<% end %>
+
+<% unless @page.blank? %>
+<hr />
+<div>
+<h2><%= @page.name %></h2>
+
+<% @page.sections.visible.sorted.each do |section| %>
+  <div class="section">
+    <% case section.content_type
+       when 'HTML' %>
+         <%= raw(sanitize(section.content, :tags => ['strong', 'em', 'a', 'h2', 'i'])) %>
+    <% when 'text' %>
+        <p><%= section.content %></p>
+    <% end %>
+  </div>
+<% end %>
+</div>
 <% end %>
